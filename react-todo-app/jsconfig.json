@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src"
+  },
+  "include": ["src"]
+}
+// with this config, we can import any module located at src/components/** like so:
+// import TodoApp from "components/TodoApp"
