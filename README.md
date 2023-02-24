@@ -35,3 +35,6 @@ Why 'this file' should be there?
 | ReactDOM   | render()                   | render React component                                                                    |
 | React      | Fragment                   | <React.Fragment></React.Fragment> is an empty node to be added to the DOM (alias: <></>)  |
 | React      | StrictMode                 | <React.StrictMode></React.StrictMode> can help identify potential problems in our application during development and may log a warning message at runtime. |
+| React      | useState()                 | returns an array contains two values: current state, and state setter function            |
+| React      | useEffect()                | a function to wrap any effects we created and to clear them                               |
+| React      | useRef()                   | to mark a DOM node which is affected by side effects                                      |
