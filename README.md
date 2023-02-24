@@ -13,6 +13,13 @@
 | html-webpack-plugin | a plugin to assist with adding Webpack bundles file to HTML file                                                  |
 | webpack-merge       | to include the common configuration in the environment-specific configurations (i.e., development and production) |
 
+# Files Relation
+Why 'this file' should be there?
+| Path              | Reference                 |
+|-------------------|---------------------------|
+| src/index.js      | webpack.common.js         |
+| src/index.html    | webpack.common.js         |
+
 # React Methods
 | References | Methods         | What's it for?                                                      |
 |------------|-----------------|---------------------------------------------------------------------|
