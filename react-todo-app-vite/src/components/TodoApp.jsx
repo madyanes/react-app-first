@@ -1,11 +1,10 @@
-import React from 'react'
+import Header from '@/components/Header'
 
 const TodoApp = () => {
   return (
-    <React.Fragment>
-      <h1>Hello world!</h1>
-      <p>I am in a React Component!</p>
-    </React.Fragment>
+    <>
+      <Header />
+    </>
   );
 };
 export default TodoApp;
