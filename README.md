@@ -7,7 +7,7 @@
 | webpack-cli         | ?                                                                                                                 |
 | webpack-dev-server  | ?                                                                                                                 |
 | @babel/core         | to transform our code to what all browsers understand                                                             |
-| babel-loader        | ?                                                                                                                 |
+| babel-loader        | to transpile JavaScript files                                                                                     |
 | @babel/preset-react | ?                                                                                                                 |
 | @babel/preset-env   | ?                                                                                                                 |
 | html-webpack-plugin | a plugin to assist with adding Webpack bundles file to HTML file                                                  |
