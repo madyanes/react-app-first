@@ -1,8 +1,11 @@
 # Dependencies
-| Name      | Functionality                  |
-|-----------|--------------------------------|
-| react     | the actual React library       |
-| react-dom | lets us use React with the DOM |
+| Name               | Functionality                              |
+|--------------------|--------------------------------------------|
+| react              | the actual React library                   |
+| react-dom          | lets us use React with the DOM             |
+| webpack            | to bundle our codes and their dependencies |
+| webpack-cli        | ?                                          |
+| webpack-dev-server | ?                                          |
 
 # React Methods
 | References | Methods         | What's it for?                                                      |
