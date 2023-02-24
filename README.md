@@ -27,9 +27,10 @@ Why 'this file' should be there?
 | src/index.js      | webpack.common.js         |
 | src/index.html    | webpack.common.js         |
 
-# React Methods
-| References | Methods         | What's it for?                                                      |
-|------------|-----------------|---------------------------------------------------------------------|
-| React      | createRoot()    | create a root to display React components inside a browser DOM node |
-| ReactDOM   | createElement() | create a virtual DOM                                                |
-| ReactDOM   | render()        | render React component                                              |
+# React Methods/Properties
+| References | Methods/Properties        | What's it for?                                                                            |
+|------------|----------------------------|-------------------------------------------------------------------------------------------|
+| React      | createRoot()               | create a root to display React components inside a browser DOM node                       |
+| ReactDOM   | createElement()            | create a virtual DOM                                                                      |
+| ReactDOM   | render()                   | render React component                                                                    |
+| React      | Fragment                   | <React.Fragment></React.Fragment> is an empty node to be added to the DOM (alias: <></>)  |
