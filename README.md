@@ -13,6 +13,11 @@
 | html-webpack-plugin | a plugin to assist with adding Webpack bundles file to HTML file                                                  |
 | webpack-merge       | to include the common configuration in the environment-specific configurations (i.e., development and production) |
 
+# Files Jobdesc
+| Path       | Description                                               |
+|------------|-----------------------------------------------------------|
+| .babelrc   | babel config; tell babel to use preset-react & preset-env |
+
 # Files Relation
 Why 'this file' should be there?
 | Path              | Reference                 |
