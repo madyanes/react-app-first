@@ -5,7 +5,8 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',
-    clean: true
+    clean: true,
+    assetModuleFilename: 'images/\[name\][ext][query]'  // custom output filename (file url path)
   },
   plugins: [
     new HTMLWebpackPlugin({
@@ -18,7 +19,11 @@ module.exports = {
         test: /\.(js|jsx)/,
         exclude: /node_modules/,
         use: [{ loader: 'babel-loader' }],
-      }
+      },
+      {
+        test: /\.(png|svg|jpg|gif)/i,
+        type: 'asset/resource',
+      },
     ]
   }
 };
