@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import reactLogo from './images/react.svg';
+import './styles/app.css';
 
 const rootElement = document.getElementById('root');
 
