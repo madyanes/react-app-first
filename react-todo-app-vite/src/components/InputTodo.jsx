@@ -9,8 +9,12 @@ const InputTodo = ({ addTodo }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    addTodo(title)
-    setTitle('')
+    if (title.trim()) {
+      addTodo(title)
+      setTitle('')
+    } else {
+      alert('New Todo item should not empty!')
+    }
   }
 
   return (
