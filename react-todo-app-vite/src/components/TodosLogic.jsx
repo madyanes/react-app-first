@@ -22,6 +22,15 @@ const TodosLogic = () => {
     }
   ])
 
+  const setUpdate = (updatedTitle, id) => {
+    setTodos(todos.map((todo) => {
+      if (todo.id === id) {
+        todo.title = updatedTitle
+      }
+      return todo
+    }))
+  }
+
   const handleChange = (id) => {
     setTodos((prevState) => prevState.map((todo) => {
       if (todo.id === id) {
@@ -50,7 +59,11 @@ const TodosLogic = () => {
   return (
     <div>
       <InputTodo addTodo={ addTodo } />
-      <TodosList todosProps={ todos } handleChange={ handleChange } deleteTodo={ deleteTodo } />
+      <TodosList todosProps={ todos } 
+        handleChange={ handleChange } 
+        deleteTodo={ deleteTodo } 
+        setUpdate={ setUpdate } 
+      />
     </div>
   )
 }
