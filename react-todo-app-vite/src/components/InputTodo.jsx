@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { SlPlus } from 'react-icons/sl'
 
 const InputTodo = ({ addTodo }) => {
   const [title, setTitle] = useState('')
@@ -28,7 +29,7 @@ const InputTodo = ({ addTodo }) => {
           value={ title }
           onChange={ handleChange }
           className="input-text" />
-        <button className="input-submit">Submit</button>
+        <button className="input-submit"><SlPlus /></button>
       </form>
       <span className="submit-warning">{ message }</span>
     </>

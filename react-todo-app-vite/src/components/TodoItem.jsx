@@ -1,4 +1,5 @@
 import { useState, useRef } from 'react'
+import { SlPencil, SlTrash } from 'react-icons/sl'
 import styles from '@/styles/TodoItem.module.scss'
 
 const TodoItem = ({ itemProp, handleChange, deleteTodo, setUpdate }) => {
@@ -38,8 +39,8 @@ const TodoItem = ({ itemProp, handleChange, deleteTodo, setUpdate }) => {
           type="checkbox"
           checked={ itemProp.completed }
           onChange={ () => handleChange(itemProp.id) } />
-        <button onClick={ handleEditing }>Edit</button>
-        <button onClick={ () => deleteTodo(itemProp.id) }>Delete</button>
+        <button onClick={ handleEditing }><SlPencil /></button>
+        <button onClick={ () => deleteTodo(itemProp.id) }><SlTrash /></button>
         <span style={ itemProp.completed ? completedStyle : null }>
           { itemProp.title }
         </span>
