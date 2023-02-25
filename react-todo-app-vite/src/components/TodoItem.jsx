@@ -3,6 +3,7 @@ import styles from '@/styles/TodoItem.module.scss'
 
 const TodoItem = ({ itemProp, handleChange, deleteTodo, setUpdate }) => {
   const [editing, setEditing] = useState(false)
+  const [updateInput, setUpdateInput] = useState(itemProp.title)
 
   const handleEditing = () => {
     setEditing(true)
@@ -10,6 +11,7 @@ const TodoItem = ({ itemProp, handleChange, deleteTodo, setUpdate }) => {
 
   const handleUpdatedDone = (event) => {
     if (event.key === 'Enter') {
+      setUpdate(updateInput, itemProp.id)
       setEditing(false)
     }
   }
@@ -39,14 +41,14 @@ const TodoItem = ({ itemProp, handleChange, deleteTodo, setUpdate }) => {
         <button onClick={ handleEditing }>Edit</button>
         <button onClick={ () => deleteTodo(itemProp.id) }>Delete</button>
         <span style={ itemProp.completed ? completedStyle : null }>
-          { itemProp.title }
+          { updateInput }
         </span>
       </div>
       <input 
         type="text"
-        value={ itemProp.title }
+        value={ updateInput }
         style={ editMode }
-        onChange={ (event) => setUpdate(event.target.value, itemProp.id) }
+        onChange={ (event) => setUpdateInput(event.target.value) }
         onKeyDown={ handleUpdatedDone }
         className={ styles.textInput } />
     </li>
