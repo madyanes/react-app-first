@@ -39,8 +39,16 @@ const TodoItem = ({ itemProp, handleChange, deleteTodo, setUpdate }) => {
           type="checkbox"
           checked={ itemProp.completed }
           onChange={ () => handleChange(itemProp.id) } />
-        <button onClick={ handleEditing }><SlPencil /></button>
-        <button onClick={ () => deleteTodo(itemProp.id) }><SlTrash /></button>
+        <button onClick={ handleEditing }>
+          <SlPencil
+            style={{ color: '#5e5e5e', fontSize: '16px' }} 
+          />
+        </button>
+        <button onClick={ () => deleteTodo(itemProp.id) }>
+          <SlTrash
+            style={{ color: '#5e5e5e', fontSize: '16px' }} 
+          />
+        </button>
         <span style={ itemProp.completed ? completedStyle : null }>
           { itemProp.title }
         </span>

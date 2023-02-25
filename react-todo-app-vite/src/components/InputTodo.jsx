@@ -29,7 +29,13 @@ const InputTodo = ({ addTodo }) => {
           value={ title }
           onChange={ handleChange }
           className="input-text" />
-        <button className="input-submit"><SlPlus /></button>
+        <button className="input-submit">
+          <SlPlus
+            color="#5e5e5e"
+            fontSize="20px"
+            marginTop="2px" 
+          />
+        </button>
       </form>
       <span className="submit-warning">{ message }</span>
     </>
