@@ -10,10 +10,11 @@ const TodosLogic = () => {
     const savedTodos = JSON.parse(temp)
     return savedTodos || []
   }
-  
+
   const [todos, setTodos] = useState(getInitialTodos())
 
   useEffect(() => {
+    // storing todos
     const temp = JSON.stringify(todos)
     localStorage.setItem('todos', temp)
   }, [todos])
