@@ -2,6 +2,7 @@ import { useState } from "react"
 
 const InputTodo = ({ addTodo }) => {
   const [title, setTitle] = useState('')
+  const [message, setMessage] = useState('')
 
   const handleChange = (event) => {
     setTitle(event.target.value)
@@ -12,20 +13,24 @@ const InputTodo = ({ addTodo }) => {
     if (title.trim()) {
       addTodo(title)
       setTitle('')
+      setMessage('')
     } else {
-      alert('New Todo item should not empty!')
+      setMessage('New Todo item should not empty!')
     }
   }
 
   return (
-    <form onSubmit={ handleSubmit }>
-      <input 
-        type="text" 
-        placeholder="Add Todo..."
-        value={ title }
-        onChange={ handleChange } />
-      <button>Submit</button>
-    </form>
+    <>
+      <form onSubmit={ handleSubmit }>
+        <input 
+          type="text" 
+          placeholder="Add Todo..."
+          value={ title }
+          onChange={ handleChange } />
+        <button>Submit</button>
+      </form>
+      <span>{ message }</span>
+    </>
   )
 }
 
