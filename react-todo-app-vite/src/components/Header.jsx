@@ -1,4 +1,4 @@
-import styles from '@/styles/Header.module.css'
+import styles from '@/styles/Header.module.scss'
 
 const Header = () => {
   const headerStyle = {
@@ -7,7 +7,7 @@ const Header = () => {
     color: '#aeadad',
     textAlign: 'center',
   }
-  
+
   return (
     <header>
       <h1 
