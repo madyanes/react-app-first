@@ -38,3 +38,6 @@ Why 'this file' should be there?
 | React      | useState()                 | returns an array contains two values: current state, and state setter function            |
 | React      | useEffect()                | a function to wrap any effects we created and to clear them                               |
 | React      | useRef()                   | to mark a DOM node which is affected by side effects                                      |
+
+# Side Effect
+Any action that modifies a state outside a component scope is a side effect and must isolate inside a `useEffect()` Hook.
