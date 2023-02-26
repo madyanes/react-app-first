@@ -1,8 +1,10 @@
 import { useState, useRef } from 'react'
 import { SlPencil, SlTrash } from 'react-icons/sl'
+import { useTodosContext } from '@/context/TodosContext'
 import styles from '@/styles/TodoItem.module.scss'
 
-const TodoItem = ({ itemProp, handleChange, deleteTodo, setUpdate }) => {
+const TodoItem = ({ itemProp }) => {
+  const { handleChange, deleteTodo, setUpdate } = useTodosContext()
   const editInputRef = useRef(null)
   const [editing, setEditing] = useState(false)
 
