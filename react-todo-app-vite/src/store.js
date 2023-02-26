@@ -1,5 +1,5 @@
 import { create } from 'zustand'
-import { persist } from 'zustand/middleware'
+import { persist, createJSONStorage } from 'zustand/middleware'
 import { v4 as uuidv4 } from 'uuid'
 
 const todosStore = (set) => ({
@@ -39,5 +39,8 @@ const todosStore = (set) => ({
 })
 
 export const useTodosStore = create(
-  persist(todosStore, { name: 'todos' })
+  persist(todosStore, { 
+    name: 'todos',
+    storage: createJSONStorage(() => localStorage) 
+  })
 )
