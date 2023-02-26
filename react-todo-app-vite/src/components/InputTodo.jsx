@@ -1,9 +1,9 @@
 import { useState } from "react"
 import { SlPlus } from 'react-icons/sl'
-import { useTodosContext } from "@/context/TodosContext"
+import { useTodosStore } from "@/store"
 
 const InputTodo = () => {
-  const { addTodo } = useTodosContext()
+  const addTodo = useTodosStore((state) => state.addTodo)
   const [title, setTitle] = useState('')
   const [message, setMessage] = useState('')
 
