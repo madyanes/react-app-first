@@ -30,10 +30,11 @@ const InputTodo = ({ addTodo }) => {
           onChange={ handleChange }
           className="input-text" />
         <button className="input-submit">
-          <SlPlus
-            color="#5e5e5e"
-            fontSize="20px"
-            marginTop="2px" 
+          <SlPlus style={{
+            'color': "#5e5e5e",
+            'fontSize': "20px",
+            'marginTop': "2px" 
+          }}
           />
         </button>
       </form>
