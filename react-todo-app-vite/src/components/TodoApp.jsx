@@ -5,6 +5,7 @@ import About from '@/routes/About'
 import Login from '@/routes/Login'
 import Profile from '@/routes/Profile'
 import NotMatch from '@/routes/NotMatch'
+import SinglePage from '@/routes/SinglePage'
 
 import Layout from '@/components/Layout'
 
@@ -13,7 +14,9 @@ const TodoApp = () => {
     <Routes>
       <Route path='/' element={ <Layout /> }>
         <Route index element={ <Home /> } />
-        <Route path='about' element={ <About /> } />
+        <Route path='about' element={ <About /> }>
+          <Route path=':slug' element={ <SinglePage /> } />
+        </Route>
         <Route path='login' element={ <Login /> } />
         <Route path='profile' element={ <Profile /> } />
         {/* other routes */}
