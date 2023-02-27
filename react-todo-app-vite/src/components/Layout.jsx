@@ -1,11 +1,14 @@
 import { Outlet } from 'react-router-dom'
+import { AuthProvider } from '@/context/AuthContext'
 import Navbar from '@/components/Navbar'
 
 const Layout = () => {
   return (
     <div className="wrapper">
-      <Navbar />
-      <Outlet />
+      <AuthProvider>
+        <Navbar />
+        <Outlet />
+      </AuthProvider>
     </div>
   )
 }
