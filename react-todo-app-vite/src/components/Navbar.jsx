@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import { useAuthContext } from '@/context/AuthContext'
 
 const links = [
@@ -11,7 +11,11 @@ const links = [
 
 const Navbar = () => {
   const { user, logout } = useAuthContext()
-  const handleLogout = () => logout()
+  const navigate = useNavigate()
+  const handleLogout = () => {
+    logout()
+    navigate('/login')
+  }
   return (
     <>
       <nav className="navbar">
