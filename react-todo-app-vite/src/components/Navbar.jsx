@@ -1,3 +1,4 @@
+import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { useAuthContext } from '@/context/AuthContext'
 
@@ -17,9 +18,19 @@ const Navbar = () => {
         <ul>
           { links.map((link) => {
             return (
-              <li key={ link.text }>
-                <NavLink to={ link.path }>{ link.text }</NavLink>
-              </li>
+              <React.Fragment key={ link.text }>
+                { link.path === 'login' ? (
+                 !user && (
+                  <li>
+                    <NavLink to={ link.path }>{ link.text }</NavLink>
+                  </li>
+                 ) 
+                ) : (
+                  <li>
+                    <NavLink to={ link.path }>{ link.text }</NavLink>
+                  </li>
+                ) }
+              </React.Fragment>
             )
           }) }
         </ul>
