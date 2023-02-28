@@ -1,9 +1,11 @@
 import { useState, useRef } from 'react'
 import { SlPencil, SlTrash } from 'react-icons/sl'
 import { useTodosStore } from '@/store'
+import { useAuthContext } from '@/context/AuthContext'
 import styles from '@/styles/TodoItem.module.scss'
 
 const TodoItem = ({ itemProp }) => {
+  const { user } = useAuthContext()
   const handleChange = useTodosStore((state) => state.handleChange)
   const deleteTodo = useTodosStore((state) => state.deleteTodo)
   const setUpdate = useTodosStore((state) => state.setUpdate)
@@ -43,11 +45,11 @@ const TodoItem = ({ itemProp }) => {
           type="checkbox"
           checked={ itemProp.completed }
           onChange={ () => handleChange(itemProp.id) } />
-        <button onClick={ handleEditing }>
+        { user && (<button onClick={ handleEditing }>
           <SlPencil
             style={{ color: '#5e5e5e', fontSize: '16px' }} 
           />
-        </button>
+        </button>) }
         <button onClick={ () => deleteTodo(itemProp.id) }>
           <SlTrash
             style={{ color: '#5e5e5e', fontSize: '16px' }} 
