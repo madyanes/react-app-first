@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { useAuthContext } from '@/context/AuthContext'
 
@@ -17,9 +17,28 @@ const Navbar = () => {
     logout()
     navigate('/login')
   }
+
+  const ref = useRef()
+  useEffect((event) => {
+    const handler = (event) => {
+      if (
+        navbarOpen &&
+        ref.current &&
+        !ref.current.contains(event.target)
+      ) {
+        setNavbarOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', handler)
+    return () => {
+      // Cleanup the event listener
+      document.removeEventListener('mousedown', handler)
+    }
+  }, [navbarOpen])
+
   return (
     <>
-      <nav className="navbar">
+      <nav className="navbar" ref={ ref }>
         <button className="toggle" onClick={ () => setNavbarOpen((prev) => !prev) }>
           { navbarOpen ? 'close' : 'open' }
         </button>
