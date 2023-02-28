@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 import { useAuthContext } from '@/context/AuthContext'
 import styles from '@/styles/Login.module.css'
 
@@ -7,13 +7,15 @@ const Login = () => {
   const [username, setUsername] = useState('')
   const { login } = useAuthContext()
   const navigate = useNavigate()
+  const location = useLocation()
+  const from = location.state?.pathname || '/'
 
   const handleSubmit = (event) => {
     event.preventDefault()
     if (!username) return;
     login(username)
     setUsername('')
-    navigate('/', { replace: true })
+    navigate(from, { replace: true })
   }
 
   return (
