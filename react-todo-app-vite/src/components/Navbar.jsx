@@ -1,5 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
+import { MdClose } from 'react-icons/md'
+import { FiMenu } from 'react-icons/fi'
 import { useAuthContext } from '@/context/AuthContext'
 
 const links = [
@@ -40,7 +42,16 @@ const Navbar = () => {
     <>
       <nav className="navbar" ref={ ref }>
         <button className="toggle" onClick={ () => setNavbarOpen((prev) => !prev) }>
-          { navbarOpen ? 'close' : 'open' }
+          { navbarOpen ? (
+            <MdClose style={{ width: '32px', height: '32px' }} />
+          ) : (
+            <FiMenu
+              style={{
+                width: '32px',
+                height: '32px',
+              }}
+            />
+          ) }
         </button>
         <ul className={ `menu-nav${ navbarOpen ? ' show-menu' : '' }` }>
           { links.map((link) => {
